@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasla - Expert Student Counseling & Academic Guidance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #2563EB;
+            --deep-blue: #1E40AF;
+            --accent-purple: #7C3AED;
+            --accent-pink: #EC4899;
+            --accent-orange: #F97316;
+            --accent-teal: #06B6D4;
+            --accent-green: #10B981;
+            --accent-yellow: #F59E0B;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            color: #111827;
+            background: #FFFFFF;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #2563EB, #7C3AED);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #111827;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:not(.btn-nav):hover {
+            color: var(--primary-blue);
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            display: inline-block;
+        }
+
+        .btn-nav {
+            background: linear-gradient(135deg, #2563EB, #7C3AED);
+            color: white;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-nav:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 90px;
+            min-height: 85vh;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.95), rgba(124, 58, 237, 0.92)), 
+                        url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1600&h=900&fit=crop') center/cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(236, 72, 153, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(6, 182, 212, 0.3) 0%, transparent 50%);
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .hero .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 3rem;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Search Section */
+        .search-section {
+            background: white;
+            max-width: 750px;
+            margin: 0 auto 3rem;
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .search-label {
+            color: #111827;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+            font-size: 1.05rem;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: 2px solid #E5E7EB;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .search-box button {
+            background: linear-gradient(135deg, #2563EB, #7C3AED);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-box button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+        }
+
+        .quick-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .quick-link {
+            padding: 0.6rem 1.2rem;
+            background: #F3F4F6;
+            border-radius: 25px;
+            color: #374151;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .quick-link:hover {
+            background: #E5E7EB;
+            transform: translateY(-2px);
+        }
+
+        /* Services Section - How can we help you */
+        .services-section {
+            padding: 7rem 3rem;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 5rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.1));
+            border: 2px solid rgba(37, 99, 235, 0.2);
+            color: var(--primary-blue);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: #6B7280;
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2.5rem;
+        }
+
+        .service-card-box {
+            position: relative;
+            height: 450px;
+            border-radius: 25px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card-box:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card-box:hover .service-bg-image {
+            transform: scale(1.15);
+        }
+
+        .service-overlay-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.85) 100%);
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            color: white;
+            transition: background 0.5s ease;
+        }
+
+        .service-card-box:hover .service-overlay-gradient {
+            background: linear-gradient(180deg, rgba(37, 99, 235, 0.5) 0%, rgba(37, 99, 235, 0.95) 100%);
+        }
+
+        .service-icon-large {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+        }
+
+        .service-card-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-card-box p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            opacity: 0.95;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Steps Section */
+        .steps-section {
+            padding: 7rem 3rem;
+            background: #F9FAFB;
+        }
+
+        .steps-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .step-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--card-color), var(--card-color-light));
+        }
+
+        .step-card:nth-child(1) {
+            --card-color: #2563EB;
+            --card-color-light: #60A5FA;
+        }
+
+        .step-card:nth-child(2) {
+            --card-color: #06B6D4;
+            --card-color-light: #22D3EE;
+        }
+
+        .step-card:nth-child(3) {
+            --card-color: #F97316;
+            --card-color-light: #FB923C;
+        }
+
+        .step-card:nth-child(4) {
+            --card-color: #10B981;
+            --card-color-light: #34D399;
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--card-color), var(--card-color-light));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .step-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .step-card p {
+            color: #6B7280;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* Offers Section - Redesigned with Beautiful UX */
+        .offers-section {
+            padding: 7rem 3rem;
+            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 50%, #F0F9FF 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offers-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .offers-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .offers-header {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 5rem;
+        }
+
+        .offers-badge {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.1));
+            border: 2px solid rgba(37, 99, 235, 0.3);
+            color: var(--primary-blue);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .offers-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #1E40AF, #2563EB);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .offers-header p {
+            font-size: 1.25rem;
+            color: #6B7280;
+            line-height: 1.8;
+        }
+
+        .offers-main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .offers-visual {
+            position: relative;
+        }
+
+        .offers-image-wrapper {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+        }
+
+        .offers-main-image {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+        }
+
+        .offers-floating-card {
+            position: absolute;
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            animation: floatOfferCard 4s ease-in-out infinite;
+        }
+
+        @keyframes floatOfferCard {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating-card-1 {
+            top: 8%;
+            right: -12%;
+            animation-delay: 0s;
+            max-width: 240px;
+        }
+
+        .floating-card-2 {
+            bottom: 8%;
+            left: -12%;
+            animation-delay: 2s;
+            max-width: 260px;
+        }
+
+        .floating-card-icon {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .floating-card-title {
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #111827;
+        }
+
+        .floating-card-text {
+            font-size: 0.9rem;
+            color: #6B7280;
+            line-height: 1.6;
+        }
+
+        .offers-content-area {
+            background: white;
+            border-radius: 30px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+        }
+
+        .offers-content-area h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .offers-content-area > p {
+            font-size: 1.1rem;
+            color: #6B7280;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        .offers-list-new {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .offer-item-new {
+            background: linear-gradient(135deg, #F9FAFB 0%, #FFFFFF 100%);
+            border: 2px solid #E5E7EB;
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-item-new::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 5px;
+            background: linear-gradient(135deg, #2563EB, #7C3AED);
+            transform: scaleY(0);
+            transition: transform 0.4s ease;
+        }
+
+        .offer-item-new:hover {
+            border-color: var(--primary-blue);
+            transform: translateX(15px);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.2);
+            background: white;
+        }
+
+        .offer-item-new:hover::before {
+            transform: scaleY(1);
+        }
+
+        .offer-details {
+            flex: 1;
+        }
+
+        .offer-counselor {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .offer-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2563EB, #7C3AED);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .offer-details h4 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: #111827;
+        }
+
+        .offer-description {
+            font-size: 1rem;
+            color: #6B7280;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+
+        .offer-features {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .offer-feature-tag {
+            padding: 0.4rem 1rem;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary-blue);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .offer-price-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.5rem;
+        }
+
+        .offer-price-new {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #10B981, #34D399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .offer-badge-new {
+            background: linear-gradient(135deg, #10B981, #34D399);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .offer-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #6B7280;
+        }
+
+        .offer-rating-stars {
+            color: #F59E0B;
+            font-size: 1rem;
+        }
+
+        .offers-cta-button {
+            background: linear-gradient(135deg, #2563EB, #7C3AED);
+            color: white;
+            border: none;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+            width: 100%;
+        }
+
+        .offers-cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Mission Section */
+        .mission-section {
+            padding: 7rem 3rem;
+            background: linear-gradient(135deg, #2563EB 0%, #1E40AF 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .mission-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .mission-icon {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        .mission-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+        }
+
+        .mission-content p {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            opacity: 0.95;
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .mission-stat {
+            text-align: center;
+        }
+
+        .mission-stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .mission-stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 7rem 3rem;
+            background: white;
+        }
+
+        .features-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2.5rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon-wrapper {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.1));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .feature-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: #6B7280;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* Performance Section */
+        .performance-section {
+            padding: 7rem 3rem;
+            background: linear-gradient(180deg, #F9FAFB 0%, #FFFFFF 100%);
+        }
+
+        .performance-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .performance-card {
+            background: white;
+            border-radius: 25px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: 3px solid transparent;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .performance-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--perf-color), var(--perf-color-light));
+        }
+
+        .performance-card:nth-child(1) {
+            --perf-color: #2563EB;
+            --perf-color-light: #60A5FA;
+        }
+
+        .performance-card:nth-child(2) {
+            --perf-color: #F59E0B;
+            --perf-color-light: #FCD34D;
+        }
+
+        .performance-card:nth-child(3) {
+            --perf-color: #10B981;
+            --perf-color-light: #34D399;
+        }
+
+        .performance-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--perf-color);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .performance-icon {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, var(--perf-color), var(--perf-color-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .performance-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .performance-card p {
+            color: #6B7280;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* Recognition Section */
+        .recognition-section {
+            padding: 7rem 3rem;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(124, 58, 237, 0.05));
+        }
+
+        .recognition-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .recognition-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .recognition-content p {
+            font-size: 1.15rem;
+            color: #6B7280;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        .badges-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .badge-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .badge-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .badge-icon {
+            font-size: 2rem;
+        }
+
+        .badge-text {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .performance-chart {
+            background: white;
+            padding: 3rem;
+            border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart-header {
+            margin-bottom: 2rem;
+        }
+
+        .chart-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .chart-subtitle {
+            color: #6B7280;
+            font-size: 1rem;
+        }
+
+        .chart-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .chart-bar-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chart-label {
+            font-weight: 600;
+            font-size: 1rem;
+            min-width: 120px;
+        }
+
+        .chart-bar-bg {
+            flex: 1;
+            height: 40px;
+            background: #F3F4F6;
+            border-radius: 10px;
+            margin: 0 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chart-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2563EB, #7C3AED);
+            border-radius: 10px;
+            transition: width 1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 1rem;
+            color: white;
+            font-weight: 700;
+        }
+
+        .chart-value {
+            font-weight: 800;
+            font-size: 1.1rem;
+            min-width: 50px;
+            text-align: right;
+        }
+
+        /* Feedback Section */
+        .feedback-section {
+            padding: 7rem 3rem;
+            background: white;
+        }
+
+        .feedback-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .feedback-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+        }
+
+        .feedback-content p {
+            font-size: 1.2rem;
+            color: #6B7280;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+
+        .feedback-image {
+            width: 100%;
+            max-width: 900px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 30px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+            margin: 0 auto;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 7rem 3rem;
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.97), rgba(124, 58, 237, 0.95)),
+                        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&h=600&fit=crop') center/cover;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(236, 72, 153, 0.4) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.4) 0%, transparent 50%);
+        }
+
+        .cta-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .cta-content p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .btn-cta-white {
+            background: white;
+            color: var(--primary-blue);
+            padding: 1.2rem 3rem;
+            font-size: 1.1rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-cta-white:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .btn-cta-outline {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: white;
+            border: 3px solid white;
+            padding: 1.2rem 3rem;
+            font-size: 1.1rem;
+        }
+
+        .btn-cta-outline:hover {
+            background: white;
+            color: var(--primary-blue);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
+            color: white;
+            padding: 5rem 3rem 3rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #2563EB, #7C3AED);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-brand p {
+            opacity: 0.8;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.2rem;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-links a:hover {
+            background: linear-gradient(135deg, #2563EB, #7C3AED);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+        }
+
+        .footer-links h4 {
+            font-weight: 800;
+            margin-bottom: 2rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            opacity: 0.7;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.05rem;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: #2563EB;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            opacity: 0.6;
+            font-size: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .offers-main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .performance-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .recognition-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mission-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .cta-content h2 {
+                font-size: 2.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Wasla</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#counselors">Counselors</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="btn btn-nav">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Search -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    🎓 Connect with Expert Counselors and Get Personalized Help
+                </div>
+                <h1>Expert Guidance From Those Who Guide Students Every Day</h1>
+                <p class="subtitle">At Wasla, we connect you with experienced school counselors who understand student needs. Whether it's career planning, academic issues, or scholarship applications - we're here to help you succeed.</p>
+                
+                <div class="search-section">
+                    <label class="search-label">How can our experienced counselors help you today?</label>
+                    <div class="search-box">
+                        <input type="text" placeholder="Describe what you need help with...">
+                        <button>Search</button>
+                    </div>
+                    <div class="quick-links">
+                        <a href="#" class="quick-link">🎯 Major</a>
+                        <a href="#" class="quick-link">📚 Advance</a>
+                        <a href="#" class="quick-link">💼 Businesses</a>
+                        <a href="#" class="quick-link">🎓 Solve</a>
+                        <a href="#" class="quick-link">📊 Data Entry</a>
+                        <a href="#" class="quick-link">🔧 Productivity</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section - How can we help you -->
+    <section class="services-section" id="services">
+        <div class="section-header">
+            <span class="section-badge">How can we help you</span>
+            <h2>Our Counselors Are Your Go-To Guide For</h2>
+            <p>Get expert support in every aspect of your academic journey from certified school counselors with real-world experience</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card-box">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=450&fit=crop&q=80" alt="Career Planning" class="service-bg-image">
+                <div class="service-overlay-gradient">
+                    <div class="service-icon-large">🎯</div>
+                    <h3>Career Planning</h3>
+                    <p>Explore career paths aligned with your interests and strengths. Get personalized roadmaps for your future success.</p>
+                </div>
+            </div>
+            <div class="service-card-box">
+                <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400&h=450&fit=crop&q=80" alt="Academic Issues" class="service-bg-image">
+                <div class="service-overlay-gradient">
+                    <div class="service-icon-large">📚</div>
+                    <h3>Academic Issues</h3>
+                    <p>Overcome academic challenges with strategies tailored to your learning style and goals.</p>
+                </div>
+            </div>
+            <div class="service-card-box">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=450&fit=crop&q=80" alt="Major Discovery" class="service-bg-image">
+                <div class="service-overlay-gradient">
+                    <div class="service-icon-large">🔍</div>
+                    <h3>Major Discovery</h3>
+                    <p>Find the perfect major that matches your passion and career aspirations through expert guidance.</p>
+                </div>
+            </div>
+            <div class="service-card-box">
+                <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=400&h=450&fit=crop&q=80" alt="Scholarships" class="service-bg-image">
+                <div class="service-overlay-gradient">
+                    <div class="service-icon-large">🎓</div>
+                    <h3>Scholarship Applications</h3>
+                    <p>Maximize your scholarship opportunities with professional application support and essay guidance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4 Simple Steps -->
+    <section class="steps-section" id="how-it-works">
+        <div class="section-header">
+            <span class="section-badge">Simple Process</span>
+            <h2>4 Simple Steps to Your Success</h2>
+            <p>Post a counseling need, get personalized offers, and connect with the perfect counselor for you</p>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-icon">🔍</div>
+                <h3>Browse & Search</h3>
+                <p>Explore our diverse pool of experienced counselors and find the perfect match for your needs</p>
+            </div>
+            <div class="step-card">
+                <div class="step-icon">💬</div>
+                <h3>Get in Touch</h3>
+                <p>Reach out to your preferred counselor and discuss your specific goals and challenges</p>
+            </div>
+            <div class="step-card">
+                <div class="step-icon">📋</div>
+                <h3>Place Your Order</h3>
+                <p>Select the service package that works best for you and confirm your counseling session</p>
+            </div>
+            <div class="step-card">
+                <div class="step-icon">✅</div>
+                <h3>Receive & Approve</h3>
+                <p>Get expert guidance and achieve your goals with professional support every step of the way</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Post a Brief, Get Multiple Offers - Redesigned -->
+    <section class="offers-section">
+        <div class="offers-container">
+            <div class="offers-header">
+                <span class="offers-badge">Flexible Options</span>
+                <h2>Post a Brief, Get Multiple Offers</h2>
+                <p>Tell us what you need help with, and our network of experienced counselors will provide personalized offers tailored to your unique needs and budget.</p>
+            </div>
+            
+            <div class="offers-main-grid">
+                <div class="offers-visual">
+                    <div class="offers-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=700&h=600&fit=crop&q=80" alt="Counseling Offers" class="offers-main-image">
+                    </div>
+                    <div class="offers-floating-card floating-card-1">
+                        <div class="floating-card-icon">⚡</div>
+                        <h4 class="floating-card-title">Fast Response</h4>
+                        <p class="floating-card-text">Get offers from multiple counselors within 24 hours</p>
+                    </div>
+                    <div class="offers-floating-card floating-card-2">
+                        <div class="floating-card-icon">💰</div>
+                        <h4 class="floating-card-title">Best Value</h4>
+                        <p class="floating-card-text">Compare prices and choose the perfect package for your budget</p>
+                    </div>
+                </div>
+
+                <div class="offers-content-area">
+                    <h3>Choose Your Perfect Counselor</h3>
+                    <p>Review multiple personalized offers and select the counselor that best matches your needs.</p>
+                    
+                    <div class="offers-list-new">
+                        <div class="offer-item-new">
+                            <div class="offer-details">
+                                <div class="offer-counselor">
+                                    <div class="offer-avatar">SC</div>
+                                    <div>
+                                        <h4>Sentra Career Offer</h4>
+                                        <div class="offer-rating">
+                                            <span class="offer-rating-stars">★★★★★</span>
+                                            <span>4.9 (127 reviews)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="offer-description">30-minute consultation with personalized career roadmap and follow-up resources</p>
+                                <div class="offer-features">
+                                    <span class="offer-feature-tag">✓ 30-min session</span>
+                                    <span class="offer-feature-tag">✓ Career roadmap</span>
+                                    <span class="offer-feature-tag">✓ Resources</span>
+                                </div>
+                            </div>
+                            <div class="offer-price-section">
+                                <div class="offer-price-new">$25</div>
+                            </div>
+                        </div>
+
+                        <div class="offer-item-new">
+                            <div class="offer-details">
+                                <div class="offer-counselor">
+                                    <div class="offer-avatar">AK</div>
+                                    <div>
+                                        <h4>Ahmed Khan's Advice</h4>
+                                        <div class="offer-rating">
+                                            <span class="offer-rating-stars">★★★★★</span>
+                                            <span>5.0 (89 reviews)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="offer-description">60-minute deep dive session with comprehensive action plan and email support</p>
+                                <div class="offer-features">
+                                    <span class="offer-feature-tag">✓ 60-min session</span>
+                                    <span class="offer-feature-tag">✓ Action plan</span>
+                                    <span class="offer-feature-tag">✓ Email support</span>
+                                </div>
+                            </div>
+                            <div class="offer-price-section">
+                                <div class="offer-price-new">$45</div>
+                            </div>
+                        </div>
+
+                        <div class="offer-item-new">
+                            <div class="offer-details">
+                                <div class="offer-counselor">
+                                    <div class="offer-avatar">E1</div>
+                                    <div>
+                                        <h4>Essra's Premium Package</h4>
+                                        <div class="offer-rating">
+                                            <span class="offer-rating-stars">★★★★★</span>
+                                            <span>4.8 (156 reviews)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="offer-description">Comprehensive package with 3 follow-up sessions and ongoing support</p>
+                                <div class="offer-features">
+                                    <span class="offer-feature-tag">✓ Initial session</span>
+                                    <span class="offer-feature-tag">✓ 3 follow-ups</span>
+                                    <span class="offer-feature-tag">✓ Unlimited Q&A</span>
+                                </div>
+                            </div>
+                            <div class="offer-price-section">
+                                <div class="offer-badge-new">Best Value</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="offers-cta-button">View All Offers →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Mission Behind Wasla -->
+    <section class="mission-section">
+        <div class="mission-content">
+            <div class="mission-icon">🎯</div>
+            <h2>The Mission Behind Wasla</h2>
+            <p>At Wasla, our mission is to democratize access to world-class academic counseling. We believe every student deserves expert guidance on their educational journey, regardless of their background or location.</p>
+            <p>We've created a space where school counselors can share their expertise, and students can find the perfect mentor to help them achieve their dreams. This is more than a platform; it's a movement to democratize access to world-class guidance.</p>
+            <div class="mission-stats">
+                <div class="mission-stat">
+                    <div class="mission-stat-number">3,500+</div>
+                    <div class="mission-stat-label">Lives Impacted Since Launch</div>
+                </div>
+                <div class="mission-stat">
+                    <div class="mission-stat-number">98%</div>
+                    <div class="mission-stat-label">Student Satisfaction Rate</div>
+                </div>
+                <div class="mission-stat">
+                    <div class="mission-stat-number">$2M+</div>
+                    <div class="mission-stat-label">Scholarships Secured</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Counselors, Real Experience -->
+    <section class="features-section">
+        <div class="section-header">
+            <span class="section-badge">Why Choose Us</span>
+            <h2>Real Counselors, Real Experience, Real Impact</h2>
+            <p>Every counselor on Wasla is a verified professional with years of experience guiding students to success</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon-wrapper">👨‍🎓</div>
+                <h3>Expert-Based Professionals</h3>
+                <p>All our counselors are certified professionals with proven track records in student guidance and career counseling</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon-wrapper">🎯</div>
+                <h3>Daily Operator</h3>
+                <p>Our counselors work with students every day, bringing real-world experience and up-to-date knowledge to every session</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon-wrapper">🏆</div>
+                <h3>Years of Success</h3>
+                <p>With thousands of successful student outcomes, our counselors have the expertise to guide you effectively</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon-wrapper">🌍</div>
+                <h3>Beyond School Walls</h3>
+                <p>Access expert guidance anytime, anywhere - we bring professional counseling beyond traditional school boundaries</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Only Top-Performing Counselors Stay Active -->
+    <section class="performance-section">
+        <div class="section-header">
+            <span class="section-badge">Quality Assurance</span>
+            <h2>Only Top-Performing Counselors Stay Active</h2>
+            <p>We maintain the highest standards by continuously evaluating counselor performance and student satisfaction</p>
+        </div>
+        <div class="performance-grid">
+            <div class="performance-card">
+                <div class="performance-icon">📊</div>
+                <h3>Monthly Checkable 3.5/5</h3>
+                <p>Students grade their counselors each month, and counselors must maintain a 3.5-star rating or higher to remain active on the platform</p>
+            </div>
+            <div class="performance-card">
+                <div class="performance-icon">⭐</div>
+                <h3>Deliver Expectations</h3>
+                <p>Our high rating thresholds (5-star preferred) mean only those that deliver exceptional service stay on the platform</p>
+            </div>
+            <div class="performance-card">
+                <div class="performance-icon">📈</div>
+                <h3>Know Weighted Ratings</h3>
+                <p>Recent performance matters more. Ratings from the past month carry 50% more weight than older ratings to ensure current quality</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recognition for Excellence -->
+    <section class="recognition-section">
+        <div class="recognition-container">
+            <div class="recognition-content">
+                <span class="section-badge">Awards & Recognition</span>
+                <h2>Recognition for Excellence</h2>
+                <p>We celebrate and reward counselors who consistently deliver outstanding results and exceed student expectations.</p>
+                <div class="badges-grid">
+                    <div class="badge-item">
+                        <div class="badge-icon">🏅</div>
+                        <div class="badge-text">Top Performer</div>
+                    </div>
+                    <div class="badge-item">
+                        <div class="badge-icon">✅</div>
+                        <div class="badge-text">Verified Expert</div>
+                    </div>
+                    <div class="badge-item">
+                        <div class="badge-icon">⭐</div>
+                        <div class="badge-text">5-Star Rated</div>
+                    </div>
+                    <div class="badge-item">
+                        <div class="badge-icon">🎯</div>
+                        <div class="badge-text">Student Favorite</div>
+                    </div>
+                </div>
+            </div>
+            <div class="performance-chart">
+                <div class="chart-header">
+                    <h3>Performance Data</h3>
+                    <p class="chart-subtitle">Based on student feedback and outcomes</p>
+                </div>
+                <div class="chart-bars">
+                    <div class="chart-bar-item">
+                        <div class="chart-label">Overall Quality</div>
+                        <div class="chart-bar-bg">
+                            <div class="chart-bar-fill" style="width: 98%;">98%</div>
+                        </div>
+                        <div class="chart-value">4.9</div>
+                    </div>
+                    <div class="chart-bar-item">
+                        <div class="chart-label">Communication</div>
+                        <div class="chart-bar-bg">
+                            <div class="chart-bar-fill" style="width: 96%;">96%</div>
+                        </div>
+                        <div class="chart-value">4.8</div>
+                    </div>
+                    <div class="chart-bar-item">
+                        <div class="chart-label">Results Delivered</div>
+                        <div class="chart-bar-bg">
+                            <div class="chart-bar-fill" style="width: 99%;">99%</div>
+                        </div>
+                        <div class="chart-value">5.0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Your Feedback Drives Excellence -->
+    <section class="feedback-section">
+        <div class="feedback-content">
+            <span class="section-badge">Student Voice</span>
+            <h2>Your Feedback Drives Excellence</h2>
+            <p>Student feedback is at the heart of everything we do. We use your reviews and ratings to continuously improve our platform and ensure you receive the best possible guidance.</p>
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&h=400&fit=crop&q=80" alt="Feedback Session" class="feedback-image">
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Start Your Journey?</h2>
+            <p>Connect with expert counselors who understand your goals and can guide you to success. Transform your academic future today with personalized support from professionals who care.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-cta-white">Get Started Free →</a>
+                <a href="#" class="btn btn-cta-outline">Student Counselor?</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Wasla</h3>
+                <p>Connecting students with experienced counselors for personalized academic and career guidance. Empowering the next generation of leaders.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter">𝕏</a>
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">ig</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>For Students</h4>
+                <ul>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">Browse Counselors</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Success Stories</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>For Counselors</h4>
+                <ul>
+                    <li><a href="#">Become a Counselor</a></li>
+                    <li><a href="#">Counselor Dashboard</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Best Practices</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Wasla. All rights reserved. Built with care for students worldwide.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Add fade-in animation to cards
+        document.querySelectorAll('.step-card, .feature-card, .performance-card, .offer-item-new, .service-card-box').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            fadeInObserver.observe(el);
+        });
+
+        // Animate chart bars on scroll
+        const chartObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bars = entry.target.querySelectorAll('.chart-bar-fill');
+                    bars.forEach((bar, index) => {
+                        setTimeout(() => {
+                            bar.style.width = bar.style.width || '0%';
+                        }, index * 200);
+                    });
+                    chartObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const chart = document.querySelector('.performance-chart');
+        if (chart) chartObserver.observe(chart);
+
+        // Counter animation for mission stats
+        function animateCounter(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = formatNumber(target);
+                    clearInterval(timer);
+                } else {
+                    element.textContent = formatNumber(Math.floor(current));
+                }
+            }, 16);
+        }
+
+        function formatNumber(num) {
+            if (num >= 1000000) {
+                return '$' + (num / 1000000).toFixed(1) + 'M+';
+            } else if (num >= 1000) {
+                return (num / 1000).toFixed(1).replace('.0', '') + 'K+';
+            }
+            return num + '%';
+        }
+
+        // Trigger counter animation
+        const missionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.mission-stat-number');
+                    statNumbers.forEach((stat, index) => {
+                        const values = [3500, 98, 2000000];
+                        setTimeout(() => {
+                            animateCounter(stat, values[index]);
+                        }, index * 200);
+                    });
+                    missionObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const missionSection = document.querySelector('.mission-section');
+        if (missionSection) missionObserver.observe(missionSection);
+    </script>
+</body>
+</html>
